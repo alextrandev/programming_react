@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.css'
 import foxImg from './assets/foxes4ev.png'
 import Box from "./Box"
@@ -11,10 +12,17 @@ function App() {
     {id:"3", name:"Vera", title:"CMO", location:"Berlin"}
   ]);
 
+    const increaseCounter = () => setCounter(counter + 1);
+    const decreaseCounter = () => setCounter(counter - 1);
+    const resetCounter = () => setCounter(0);
+  
   return (
     <>
       <img src={foxImg} alt="image of a sleeping fox"/>
       <p>Counter: {counter}</p>
+      <button onClick={increaseCounter}>Increase</button>
+      <button onClick={decreaseCounter}>Decrease</button>
+      <button onClick={resetCounter}>Reset</button>
       <div className='container'>
       {persons.map(person => (
         <Box 
