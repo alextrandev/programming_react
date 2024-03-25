@@ -6,7 +6,7 @@
 1. npm create vite@lastest
 2. complete the prompt
 3. cd to the installed folder
-4. npm install
+4. npm install (always do this when cloning react app)
 5. npm run dev
 
 ## Structure
@@ -20,3 +20,4 @@
    - Embedding with {}: <h1>{ JS expression }</h1>
 6. Components:
    - Start with capital letter
+7. .gitignore: file/folder wrote here will not be publish to remote repo
