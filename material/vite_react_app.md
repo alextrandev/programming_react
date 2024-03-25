@@ -8,6 +8,7 @@
 3. cd to the installed folder
 4. npm install (always do this when cloning react app)
 5. npm run dev
+6. install ESlint: npm install eslint
 
 ## Structure
 
