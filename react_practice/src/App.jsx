@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import './App.css'
 import foxImg from './assets/foxes4ev.png'
-import Box from "./Box"
 import { useState } from 'react'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PersonsContainer from './components/PersonsContainer';
+import Counter from './components/Counter';
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -12,27 +15,26 @@ function App() {
     {id:"3", name:"Vera", title:"CMO", location:"Berlin"}
   ]);
 
-    const increaseCounter = () => setCounter(counter + 1);
-    const decreaseCounter = () => setCounter(counter - 1);
-    const resetCounter = () => setCounter(0);
+    const clickIncreaseHandler = () => setCounter(counter + 1);
+    const clickDecreaseHandler = () => setCounter(counter - 1);
+    const clickResetHandler = () => setCounter(0);
   
   return (
     <>
-      <img src={foxImg} alt="image of a sleeping fox"/>
-      <p>Counter: {counter}</p>
-      <button onClick={increaseCounter}>Increase</button>
-      <button onClick={decreaseCounter}>Decrease</button>
-      <button onClick={resetCounter}>Reset</button>
-      <div className='container'>
-      {persons.map(person => (
-        <Box 
-          key={person.id}
-          name={person.name} 
-          title={person.title}
-          location={person.location}
+      <Header />
+
+      <main className='flex flex-col items-center bg-white bg-opacity-40'>
+        <img src={foxImg} alt="image of a sleeping fox"/>
+        <Counter
+          counter={counter} 
+          clickIncreaseHandler={clickIncreaseHandler}
+          clickDecreaseHandler={clickDecreaseHandler}
+          clickResetHandler={clickResetHandler}
         />
-      ))}
-      </div>
+        <PersonsContainer persons={persons} />
+      </main>
+
+      <Footer />
     </>
   )
 }
