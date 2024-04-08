@@ -12,3 +12,9 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+header,
+main,
+footer {
+  width: 800px;
+}
