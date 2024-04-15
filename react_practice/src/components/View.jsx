@@ -1,11 +1,11 @@
-export default function View(props) {
+export default function View({firstName, lastName, phone, email, message}) {
   return (
     <>
-      <p>Firstname: {props.firstName}</p>
-      <p>Lastname: {props.lastName}</p>
-      <p>Phone: {props.phone}</p>
-      <p>E-mail: {props.email}</p>
-      <p>Message: {props.message}</p>
+      <p>Firstname: {firstName}</p>
+      <p>Lastname: {lastName}</p>
+      <p>Phone: {phone}</p>
+      <p>E-mail: {email}</p>
+      <p>Message: {message}</p>
     </>
   )
 }
