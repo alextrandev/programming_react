@@ -16,19 +16,12 @@ function App() {
     {id:"2", name:"John", title:"CTO", location:"London"},
     {id:"3", name:"Vera", title:"CMO", location:"Berlin"}
   ]);
-  const [inputValues, setInputValue] = useState({
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    message: ''
-  });
+  const [inputValues, setInputValue] = useState({}); //can be left empty. useState will create basesd on the name given
 
     const clickIncreaseHandler = () => setCounter(counter + 1);
     const clickDecreaseHandler = () => setCounter(counter - 1);
     const clickResetHandler = () => setCounter(0);
-
-    const inputChangeHandler = e => setInputValue({...inputValues, [e.target.name]: e.target.value});
+    const inputChangeHandler = e => setInputValue(prevState => ({...prevState, [e.target.name]: e.target.value}));
   
   return (
     <>
@@ -42,7 +35,7 @@ function App() {
           clickDecreaseHandler={clickDecreaseHandler}
           clickResetHandler={clickResetHandler}
         />
-        <Form inputChangeHandler={(e) => inputChangeHandler(e)}/>
+        <Form inputChangeHandler={inputChangeHandler}/>
         <View {...inputValues}/>
         <PersonsContainer persons={persons} />
       </main>
