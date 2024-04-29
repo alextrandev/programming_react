@@ -20,12 +20,16 @@ function App() {
   ]);
   const [inputValues, setInputValue] = useState({}); //can be left empty. useState will create basesd on the name given
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState("Guest");
 
   const clickIncreaseHandler = () => setCounter(counter + 1);
   const clickDecreaseHandler = () => setCounter(counter - 1);
   const clickResetHandler = () => setCounter(0);
   const inputChangeHandler = e => setInputValue(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
-  const loginHandler = () => setIsLoggedIn(!isLoggedIn);
+  const loginHandler = user => {
+    setIsLoggedIn(!isLoggedIn);
+    setUser(user);
+  };
 
   return (
     <>
@@ -34,9 +38,10 @@ function App() {
       <main className='flex flex-col items-center bg-white bg-opacity-40'>
         <img src={foxImg} alt="image of a sleeping fox" />
 
-        <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} />
+        <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Alex" />
+        <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Guest" />
 
-        {isLoggedIn && <Dashboard user={"Alex"} />}
+        {isLoggedIn && <Dashboard user={user} />}
 
         <Counter
           counter={counter}
