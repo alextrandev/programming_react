@@ -20,3 +20,8 @@ main,
 footer {
   width: 800px;
 }
+
+a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}

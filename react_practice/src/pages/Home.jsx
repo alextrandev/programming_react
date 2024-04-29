@@ -1,4 +1,4 @@
-// import foxImg from './assets/foxes4ev.png'
+import foxImg from '../assets/foxes4ev.png'
 import { useState } from 'react'
 import PersonsContainer from '../components/PersonsContainer';
 import Counter from '../components/Counter';
@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <main className='flex flex-col items-center bg-white bg-opacity-40'>
-        {/* <img src={foxImg} alt="image of a sleeping fox" /> */}
+        <img src={foxImg} alt="image of a sleeping fox" />
 
         < LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Alex" />
         {!isLoggedIn && <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Guest" />}

@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="bg-blue-300 flex justify-between items-center px-10 bg-opacity-80">
-      <h1>React pratice</h1>
+      <Link to={'/'}>
+        <h1>React pratice</h1>
+      </Link>
       <div className=" flex gap-3">
-        <Link to={'/'}>Home</Link>
-        <Link to={'/dashboard'}>Dashboard</Link>
-        <Link to={'/person'}>Person</Link>
-        <Link to={'/about'}>About</Link>
+        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={'/dashboard'}>Dashboard</NavLink>
+        <NavLink to={'/person'}>Person</NavLink>
+        <NavLink to={'/about'}>About</NavLink>
       </div>
     </header>
   )
