@@ -38,8 +38,8 @@ function App() {
       <main className='flex flex-col items-center bg-white bg-opacity-40'>
         <img src={foxImg} alt="image of a sleeping fox" />
 
-        <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Alex" />
-        <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Guest" />
+        < LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Alex" />
+        {!isLoggedIn && <LogInButton loginHandler={loginHandler} isLoggedIn={isLoggedIn} user="Guest" />}
 
         {isLoggedIn && <Dashboard user={user} />}
 
