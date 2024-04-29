@@ -1,13 +1,14 @@
-// import foxLogo from '../assets/foxes4ev.png'
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="bg-blue-300 flex justify-between items-center px-10 bg-opacity-80">
-      {/* <img className='h-6' src={foxLogo} alt="" /> */}
       <h1>React pratice</h1>
       <div className=" flex gap-3">
-        <a href="">Home</a>
-        <a href="">Persons</a>
+        <Link to={'/'}>Home</Link>
+        <Link to={'/dashboard'}>Dashboard</Link>
+        <Link to={'/person'}>Person</Link>
+        <Link to={'/about'}>About</Link>
       </div>
     </header>
   )
