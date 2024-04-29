@@ -3,6 +3,7 @@
   margin: 0 auto;
   text-align: center;
   box-shadow: 0 0 7px gray;
+  min-height: 100vh;
 }
 
 img {
@@ -18,4 +19,9 @@ header,
 main,
 footer {
   width: 800px;
+}
+
+a.active {
+  text-decoration: underline;
+  font-weight: bold;
 }
