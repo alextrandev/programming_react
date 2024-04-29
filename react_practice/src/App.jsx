@@ -8,7 +8,7 @@ import PersonsContainer from './components/PersonsContainer';
 import Counter from './components/Counter';
 import Form from './components/Form';
 import View from './components/View';
-import Dashboard from './components/DashBoard';
+import Dashboard from './pages/Dashboard';
 import LogInButton from './components/LogInButton';
 
 function App() {
