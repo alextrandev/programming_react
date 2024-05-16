@@ -1,10 +1,26 @@
-# React classroom practice
+# Project title
 
-This is a demo to practice React in the REACT24K React class
+This is a react practice repo for React Basic course at Busness College Helsinki
 
-Run npm install to install node module when cloning this repo
+## Technologies used
 
-# Week 10
+Built with: 
 
-- Create the project
-- Cleanup the file structure
+- React
+- Vite
+- Javascript
+- CSS
+- Tailwind CSS
+- Json server
+
+## Setup and usage
+
+- Clone the repo: ```git clone https://github.com/alextrandev/programming_react.git```
+- Change directory : ```cd programming_react/react_practice```
+- Install dependencies: ```npm install```
+- Host the site in local host: ```npm run dev```
+- To see the dashboard, in a different terminal, host the json server: ```npx json-server ./src/db/db.json```
+
+## Authors and acknowledgment
+
+Teacher: [Margit Tennosaar](https://github.com/margittennosaar)
