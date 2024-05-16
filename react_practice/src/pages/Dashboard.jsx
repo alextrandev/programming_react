@@ -13,6 +13,13 @@ export default function Dashboard({ user }) {
         ...post,
         published: !value
       })
+      .then(() =>
+        setPosts(prevPosts => prevPosts.map(prevPost =>
+          prevPost.id == post.id
+            ? { ...prevPost, published: !value }
+            : prevPost
+        ))
+      )
       .catch(error => console.log("Error: " + error))
   }
 
