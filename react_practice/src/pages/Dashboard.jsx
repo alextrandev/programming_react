@@ -5,10 +5,15 @@ import PublishedButton from "../components/PublishedButton";
 export default function Dashboard({ user }) {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => { axios.get("http://localhost:3000/posts").then(res => setPosts(res.data)).catch(error => console.log(error)) }, [])
+  useEffect(() => { axios.get("http://localhost:3000/posts/").then(res => setPosts(res.data)).catch(error => console.log(error)) }, [])
 
-  const handleClick = (id, value) => {
-    console.log(id, value);
+  const handleClick = (post, value) => {
+    axios
+      .put(`http://localhost:3000/posts/${post.id}`, {
+        ...post,
+        published: !value
+      })
+      .catch(error => console.log("Error: " + error))
   }
 
   return (
